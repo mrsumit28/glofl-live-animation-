@@ -1,0 +1,548 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monn;
+    color: #fff;
+    font-family: "Montserrat";
+}
+*::selection{
+    background-color: #fff;
+    color: #95c11e
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+body::-webkit-scrollbar{
+    display: block;
+    width: 8px;
+    background-color:#090c02 ;
+}
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(to right,#cbff3c,#166d00);
+    border-radius: 50px;
+}
+#nav {
+    height: 140px;
+    width: 100%;
+    /* background-color: rgb(0,z 77, 51); */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    position: fixed;
+    z-index: 99;
+    padding: 0 120px;
+}
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: #95c11e;
+    position: fixed;
+    z-index: 99;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+}
+
+#cursor-blur {
+    height: 500px;
+    width: 500px;
+    background-color: rgba(195, 250, 43, 0.212);
+    position: fixed;
+    filter: blur(100px);
+    border-radius: 50%;
+    z-index: 9;
+}
+
+#nav img {
+    height: 82px;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+    transition: all ease 0.3s;
+}
+#nav h4:hover{
+    color: #95c11e;
+    
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1 {
+    font-size: 140px;
+    font-weight: 800;
+    position: relative;
+}
+
+#page1 h1::before {
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: #000;
+    left: -6px;
+    top: -6px;
+    z-index: -1;
+    -webkit-text-stroke: 2px #95c11e;
+}
+
+#page1 h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 20px;
+}
+
+#page1 p {
+    font-size: 22.0333px;
+    font-weight: 400;
+    width: 40%;
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller {
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar {
+    display: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 0px;
+    background: transparent;
+    background-color: #95c11e;
+}
+
+#scroller:hover::-webkit-scrollbar {
+    display: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 0px;
+    background: transparent;
+}
+
+#scroller-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 55s;
+    animation-iteration-count: infinite;
+}
+
+
+#scroller h4 {
+    display: inline-block;
+    color: #000;
+    font-size: 120px;
+    font-weight: 900;
+    margin-right: 10px;
+    font-family: "Archivo Black", sans-serif;
+    font-style: normal;
+    transition: all linear 0.6s;
+    /* color: transparent; */
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+#scroller h4:hover {
+    color: #95c11e;
+    -webkit-text-stroke: 2px #95c11e
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#about-us {
+    width: 100%;
+    height: 40vh;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    padding: 0 50px;
+    position: relative;
+    z-index: 10;
+}
+
+#about-us img {
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+#about-us-in {
+    width: 40%;
+    text-align: center;
+}
+
+#about-us-in h3 {
+    font-size: 60px;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+}
+
+#about-us-in p {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 28px;
+
+}
+
+#cards-container {
+    /* background-color: rgb(128, 0, 255); */
+    height: 65vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 75px;
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    height: 80%;
+    width: 25%;
+    /* background-color: #95c11e; */
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+
+#card-1 {
+    background-image: url(home-toptracer-1024x682.jpg);
+}
+
+#card-2 {
+    background-image: url(hero-4-1024x1024.jpg);
+}
+
+#card-3 {
+    background-image: url(home-lessons-1024x682.jpg);
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: #95c11e;
+    padding-top: 160px;
+    text-align: center;
+    opacity: 0;
+    padding: 50px;
+    transition: all ease 0.6s;
+    text-align: center;
+}
+
+.overlay h3 {
+    text-align: left;
+    color: #000;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 800;
+    white-space: nowrap;
+    margin: 85px 0 15px 0;
+
+}
+
+.overlay p {
+    color: #000;
+    font-size: 18px;
+    text-align: left;
+    padding: 10px 0 20px 0;
+    line-height: 25px;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: rotate3d(-1, 1, 0, 15deg);
+}
+
+#green-div {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to left bottom, #166d00, #cbff3c);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+#green-div img {
+    height: 100%;
+    object-fit: cover;
+    width: 13%;
+
+}
+
+#green-div h4 {
+    font-size: 30px;
+    color: #000;
+    text-transform: uppercase;
+    width: 50%;
+    line-height: 50px;
+    font-weight: 900;
+    font-family: "Montserrat";
+}
+
+#page3 {
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#page3>p {
+    font-size: 35px;
+    font-weight: 700;
+    width: 60%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat";
+    line-height: 45px;
+}
+
+#page3 img {
+    position: absolute;
+    height: 60px;
+    width: 60px;
+}
+
+#page3 #colone1 {
+    top: 25%;
+    left: 15%;
+}
+
+#page3 #colone2 {
+    bottom: 30%;
+    right: 15%;
+}
+
+#page4{
+    height: 30vh;
+    width: 100%;
+    /* background: rebeccapurple; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+}
+
+.elem{
+    width: 25%;
+    height: 70%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+}
+.elem h2{
+    width: 100%;
+    height: 100%;
+    background-color: #95c11e;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    /* border-radius: 20px; */
+    color: #000;
+    position: absolute;
+    z-index: 10;
+    font-weight: 800;
+    transition: all ease 0.5s;
+}
+.elem:hover h2{
+    color: #fff;
+    background: transparent;
+}
+.elem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scale: 1.1;
+    transition: all ease 0.5s;
+}
+
+.elem:hover img{
+    scale: 1;
+}
+#page4 h1{
+    position: absolute;
+    font-size: 105px;
+    top: -12%;
+    color: #000;
+    font-family: "Archivo Black", sans-serif;
+    -webkit-text-stroke: 2px #fff;
+    font-weight: 600;
+    transition: all ease 0.5s;
+}
+#page4:hover h1{
+    -webkit-text-stroke: 2px #95c11e;
+}
+
+#page1 #arrow{
+    width: 250px;
+    height: 250px;
+    /* background-color: blueviolet; */
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: -3%;
+    bottom: 0;
+    border: 2px solid #95c11e;
+    transition: all ease 0.5s;
+}
+
+#page1 #arrow span{
+    font-size: 40px;
+    font-weight: 500;
+}
+
+#page1 #arrow:hover{
+    scale: 0.4;
+    background-color: #95c11e;
+}
+
+#footer{
+    width: 100%;
+    height: 45vh;
+    background: linear-gradient(to left bottom,#166d00,#cbff3c);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 40px;
+    padding: 0 80px;
+    position: relative;
+    z-index: 10;
+}
+.ft-box{
+    width:  40%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #14fafa; */
+    /* padding: 0 30px; */
+    justify-content: center ;
+    
+
+}
+.ft-box h4{
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: 900;
+    line-height: 55px;
+    transition: all ease 0.5S;
+}
+.ft-box h4:hover{
+    color: #fff;
+}
+#ft-1 img{
+    width: 140px;
+    scale: 1.1;
+    transition: all ease 0.4s;
+}
+#ft-1 img:hover{
+    scale: 1;
+}
+#ft-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ft-3 p{
+    font-size: 20px;
+    color: #000;
+    text-transform: uppercase;
+    width: 60%;
+    font-weight: 600;
+    line-height: 30px;
+}
+#ft-3 h5{
+    font-size: 20px;
+    color: #000;
+    text-transform: uppercase;
+    width: 60%;
+    font-weight: 600;
+    line-height: 30px;
+}
+#ft-3 h5 a{
+    color: #000;
+    text-decoration: none;
+    transition: all ease 0.5s;
+}
+#ft-3 h4 a:hover{
+    color: #FFF;
+    text-decoration: none;
+}
+#ft-3 h5 a:hover{
+    color: #FFF;
+    text-decoration: none;
+}
+#ft-3 h4 a{
+    color: #000;
+    text-decoration: none;
+    font-size: 25px;
+    transition: all ease 0.5s;
+}
